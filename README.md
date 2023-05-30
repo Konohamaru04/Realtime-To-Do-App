@@ -75,7 +75,24 @@ export class TodoListComponent implements OnInit {
   }
 
   connectWebSocket() {
-    this.webSocketService.connect(); // Establish WebSocket connection
+    // Establish WebSocket connection
+    this.webSocketService.socket$ = webSocket('wss://localhost:8080');
+    this.webSocketService.socket$.subscribe(
+      (message) => {
+        this.isConnected = true;
+        var arrTodo: string [] = [];
+        message.forEach((element:any) => {
+          arrTodo.push(element.replace("\"", "").replace("\"", ""))
+        });
+        console.log(arrTodo);
+        this.todos = arrTodo;
+      },
+      (error) => console.error('WebSocket error:', error),
+      () => {
+        this.isConnected = false;
+        console.log('WebSocket connection closed');
+      }
+    );
   }
 
   disconnectWebSocket() {

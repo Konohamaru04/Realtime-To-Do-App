@@ -1,0 +1,12 @@
+<h1>Real-time To-Do List</h1>
+
+<ul>
+  <li *ngFor="let todo of todos">{{ todo }}</li>
+</ul>
+
+<input [(ngModel)]="newTodo" placeholder="Add a new todo">
+<button (click)="addTodo()">Add</button>
+
+<button (click)="connectWebSocket()" [disabled]="isConnected">Connect</button>
+<button (click)="disconnectWebSocket()" [disabled]="!isConnected">Disconnect</button>
+<button (click)="resetList()">Reset</button>
