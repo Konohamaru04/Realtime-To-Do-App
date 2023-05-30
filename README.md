@@ -263,13 +263,13 @@ That's it! You have successfully built a real-time To-Do List application using 
 + [Vercel](https://vercel.com/) account.
 + [Glitch](https://glitch.com/) account.
 
-## First we will host a **WebSocket** server on [Glitch](https://glitch.com/)
+## First we will host a **WebSocket** server on [Glitch](https://glitch.com/).
   1. LogIn to your [Glitch](https://glitch.com/) account and navigate to dashboard.
   2. Click "New Project" and select "**glitch-hello-node**" template.
   3. In your Glitch project files open **server.js** file and replace all the code with **websocket-server.js** that we have created earlier.
   4. Glitch will build and deploy your code automatically.
 
-## Next we will host a **WebSocket** server on [Glitch](https://glitch.com/)
+## Next we will host our Angular application on [Vercel](https://vercel.com/) account.
   1. Replace "wss://localhost:8080" in your project with "wss://{your-glitch-project-name}.glitch.me/".
   2. Upload your entire project in your github repository.
   3. Navigate to [Vercel](https://vercel.com/) and use SignIn with GitHub option.
