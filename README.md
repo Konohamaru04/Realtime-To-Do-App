@@ -1,5 +1,5 @@
 # Real-time To-Do List App with Angular and Custom WebSocket Server
-This is a guide on how to build a real-time To-Do List application using Angular for the front-end and a custom WebSocket server for real-time communication. The application allows multiple users to collaborate and see updates to the to-do list in real-time.
+This is a guide on how to build a real-time To-Do List application using Angular for the front-end and a custom WebSocket server for real-time communication. You can use this concept implement functionality accourding to your need, I'm using to-do app as an example. The application allows multiple users to collaborate and see updates to the to-do list in real-time.
 
 ## Prerequisites
 To follow along with this guide, make sure you have the following:
@@ -237,6 +237,7 @@ Here's a breakdown of the code:
 * If the message is a special reset message, the to-do list is cleared.
 * Otherwise, the new to-do item is added to the shared state.
 * The updated to-do list is broadcasted to all connected clients.
+
 ## Step 6: Run the Application
 1. Open a new terminal window and navigate to the root directory of your project.
 2. Start the custom WebSocket server by running the following command:
@@ -253,3 +254,24 @@ ng serve
 5. Open your web browser and navigate to **http://localhost:4200** to see the real-time To-Do List application in action.
 
 That's it! You have successfully built a real-time To-Do List application using Angular and a custom WebSocket server. Users can collaborate and see updates to the to-do list in real-time.
+
+# Deployment
+
+## Prerequisites
+
++ [GitHub](https://github.com/) account.
++ [Vercel](https://vercel.com/) account.
++ [Glitch](https://glitch.com/) account.
+
+## First we will host a **WebSocket** server on [Glitch](https://glitch.com/)
+  1. LogIn to your [Glitch](https://glitch.com/) account and navigate to dashboard.
+  2. Click "New Project" and select "**glitch-hello-node**" template.
+  3. In your Glitch project files open **server.js** file and replace all the code with **websocket-server.js** that we have created earlier.
+  4. Glitch will build and deploy your code automatically.
+
+## Next we will host a **WebSocket** server on [Glitch](https://glitch.com/)
+  1. Replace "wss://localhost:8080" in your project with "wss://{your-glitch-project-name}.glitch.me/".
+  2. Upload your entire project in your github repository.
+  3. Navigate to [Vercel](https://vercel.com/) and use SignIn with GitHub option.
+  4. On Vercel dashboard select "Add New Project" option and import the repository that you created for this project.
+  5. After that in configuration window, keep everyhing as default and click on **Deploy** button. Vercel will automatically build and deploy your project with multiple environments.
