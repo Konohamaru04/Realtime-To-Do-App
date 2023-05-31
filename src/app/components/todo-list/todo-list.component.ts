@@ -17,7 +17,7 @@ export class TodoListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.webSocketService.socket$ = webSocket('ws://localhost:8080');
+    this.webSocketService.socket$ = webSocket('wss://furtive-cute-turnover.glitch.me/');
     this.webSocketService.socket$.subscribe(
       (message) => {
         this.isConnected = true;
@@ -54,7 +54,7 @@ export class TodoListComponent implements OnInit {
   }
 
   connectWebSocket() {
-    this.webSocketService.socket$ = webSocket('ws://localhost:8080');
+    this.webSocketService.socket$ = webSocket('wss://furtive-cute-turnover.glitch.me/');
     this.webSocketService.socket$.subscribe(
       (message) => {
         this.isConnected = true;
