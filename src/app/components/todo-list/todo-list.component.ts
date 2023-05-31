@@ -17,7 +17,7 @@ export class TodoListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.webSocketService.socket$ = webSocket('wss://localhost:8080');
+    this.webSocketService.socket$ = webSocket('ws://localhost:8080');
     this.webSocketService.socket$.subscribe(
       (message) => {
         this.isConnected = true;
@@ -43,12 +43,18 @@ export class TodoListComponent implements OnInit {
     }
   }
 
+  deleteTodo(item: string){
+    if (item.trim() !== '') {
+      this.webSocketService.send('delete!*(@h9890138ch1908' + item);
+    }
+  }
+
   resetList(){
     this.webSocketService.send('reset!*(@h9890138ch1908');
   }
 
   connectWebSocket() {
-    this.webSocketService.socket$ = webSocket('wss://localhost:8080');
+    this.webSocketService.socket$ = webSocket('ws://localhost:8080');
     this.webSocketService.socket$.subscribe(
       (message) => {
         this.isConnected = true;

@@ -13,7 +13,7 @@ export class WebSocketService {
   }
 
   connect() {
-    this.socket$ = webSocket('wss://localhost:8080'); // Replace with your WebSocket server URL
+    this.socket$ = webSocket('ws://localhost:8080'); // Replace with your WebSocket server URL
   }
 
   disconnect() {
