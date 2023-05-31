@@ -42,7 +42,7 @@ export class TodoListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.webSocketService.socket$ = webSocket('wss://localhost:8080'); // Establish WebSocket connection
+    this.webSocketService.socket$ = webSocket('ws://localhost:8080'); // Establish WebSocket connection
 
     // Subscribe to the incoming messages from the WebSocket server
     this.webSocketService.socket$.subscribe(
@@ -76,7 +76,7 @@ export class TodoListComponent implements OnInit {
 
   connectWebSocket() {
     // Establish WebSocket connection
-    this.webSocketService.socket$ = webSocket('wss://localhost:8080');
+    this.webSocketService.socket$ = webSocket('ws://localhost:8080');
     this.webSocketService.socket$.subscribe(
       (message) => {
         this.isConnected = true;
@@ -146,7 +146,7 @@ export class WebSocketService {
   }
 
   connect() {
-    this.socket$ = webSocket('wss://localhost:8080'); // Replace with your WebSocket server URL
+    this.socket$ = webSocket('ws://localhost:8080'); // Replace with your WebSocket server URL
   }
 
   disconnect() {
@@ -287,7 +287,7 @@ That's it! You have successfully built a real-time To-Do List application using 
   4. Glitch will build and deploy your code automatically.
 
 ## Next we will host our Angular application on [Vercel](https://vercel.com/) account.
-  1. Replace "wss://localhost:8080" in your project with "wss://{your-glitch-project-name}.glitch.me/".
+  1. Replace "ws://localhost:8080" in your project with "wss://{your-glitch-project-name}.glitch.me/".
   2. Upload your entire project in your github repository.
   3. Navigate to [Vercel](https://vercel.com/) and use SignIn with GitHub option.
   4. On Vercel dashboard select "Add New Project" option and import the repository that you created for this project.
